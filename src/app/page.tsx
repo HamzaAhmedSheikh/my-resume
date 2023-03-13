@@ -1,10 +1,9 @@
 import About from "@/components/About";
-import Contact from "@/components/projects/Contact";
+import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Main from "@/components/Main";
-import Portfolio from "@/components/Portfolio";
 import Projects from "@/components/Projects";
-import Footer from "@/components/projects/Footer";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
@@ -12,7 +11,6 @@ export default function Home() {
       <About />
       <Experience />
       <Projects />
-      {/* <Portfolio /> */}
       <Contact />
       <Footer />
     </>

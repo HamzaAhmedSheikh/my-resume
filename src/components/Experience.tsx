@@ -8,7 +8,9 @@ import Tailwind from "../../public/images/skills/tailwind.png";
 import Github from "../../public/images/skills/github1.png";
 import Firebase from "../../public/images/skills/firebase.png";
 import NextJS from "../../public/images/skills/nextjs.png";
-import AWSCDK from "../../public/images/skills/aws-cdk.png";
+import Typescript from "../../public/images/skills/typescript.png";
+import MaterialUI from "../../public/images/skills/material-ui.png";
+import ChakraUI from "../../public/images/skills/chakra-ui.svg";
 
 const techs = [
   {
@@ -28,28 +30,43 @@ const techs = [
   },
   {
     id: 4,
+    title: "Typescript",
+    src: Typescript,
+  },
+  {
+    id: 5,
     title: "React",
     src: ReactImg,
   },
   {
-    id: 5,
+    id: 6,
+    title: "Next.js",
+    src: NextJS,
+  },
+  {
+    id: 7,
     title: "Tailwind",
     src: Tailwind,
   },
   {
-    id: 6,
+    id: 8,
+    title: "Chakra ui",
+    src: ChakraUI,
+  },
+  {
+    id: 9,
+    title: "Material UI",
+    src: MaterialUI,
+  },
+  {
+    id: 10,
     title: "Firebase",
     src: Firebase,
   },
   {
-    id: 7,
+    id: 11,
     title: "Github",
     src: Github,
-  },
-  {
-    id: 8,
-    title: "Next.js",
-    src: NextJS,
   },
 ];
 

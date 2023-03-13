@@ -1,141 +1,162 @@
-import React, { useState } from "react";
+"use client";
+import { FormEvent, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
-import { AiOutlineMail } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+export const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
-import ContactImg from "../../public/images/contact.jpg";
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-const Contact = () => {
+  const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    setSuccess(true);
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+
+    setLoading(false);
+  };
+
   return (
-    <div id="contact" className="w-full lg:h-screen">
-      <div className="max-w-[1240px] m-auto px-2 py-16 w-full ">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
-          Contact
-        </p>
-        <h2 className="py-4">Get In Touch</h2>
-        <div className="grid lg:grid-cols-5 gap-8">
-          {/* left */}
-          <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4">
-            <div className="lg:p-4 h-full ">
-              <div>
-                <Image
-                  className="rounded-xl hover:scale-105 ease-in duration-300"
-                  src={ContactImg}
-                  alt="/"
-                />
-              </div>
-              <div>
-                <h2 className="py-2">Hamza</h2>
-                <p>Front-End Developer</p>
-                <p className="py-4">
-                  I am available for freelance or full-time positions. Contact
-                  me and let's talk.
-                </p>
-              </div>
-              <div>
-                <p className="uppercase pt-8">Connect With Me</p>
-                <div className="flex items-center justify-between py-4">
-                  <Link
-                    href="https://www.linkedin.com/in/clint-briley-50056920a/"
-                    target="_blank"
-                  >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <FaLinkedinIn />
-                    </div>
-                  </Link>
-                  <Link href="https://github.com/fireclint" target="_blank">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <FaGithub />
-                    </div>
-                  </Link>
-
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <AiOutlineMail />
-                  </div>
-                  <Link href="/resume">
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <BsFillPersonLinesFill />
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+    <>
+      <section
+        id="contact"
+        className="relative bg-gray-100 lg:mt-16 dark:bg-gray-900"
+      >
+        <div className="lg:relative">
+          <div className="w-full h-full py-4 bg-gray-900 lg:hidden">
+            <Image
+              src="/images/web-dev-laptop.png"
+              alt="Web development graphic"
+              width={1280}
+              height={1104}
+              loading="lazy"
+            />
           </div>
-
-          {/* right */}
-          <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
-            <div className="p-4">
-              <form
-                action="https://getform.io/f/08ebcd37-f5b5-45be-8c13-714f011ce060"
-                method="POST"
-                encType="multipart/form-data"
-              >
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">Name</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="name"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Phone Number
+          <div className="relative hidden w-full bg-gray-900 lg:rounded-tr-3xl lg:block h-80 sm:h-96 lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2 lg:h-full">
+            <Image
+              src="/images/web-dev-laptop.png"
+              alt="Web development graphic"
+              width={1280}
+              height={1104}
+              loading="lazy"
+              className="absolute top-0 right-0 object-contain object-right w-full h-full py-8 bg-gray-900 rounded-tr-3xl max-w-7xl"
+            />
+          </div>
+          <div className="w-full py-8 mx-auto text-left max-w-7xl">
+            <div className="px-4 sm:px-6 lg:w-1/2 lg:ml-auto">
+              <div className="">
+                <h2 className="mt-2 mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
+                    Contact
+                  </span>
+                </h2>
+                <h3 className="mt-2 mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                  Send me a message
+                </h3>
+                <form
+                  className="grid grid-cols-1 gap-y-6"
+                  onSubmit={(e) => sendMessage(e)}
+                >
+                  <div>
+                    <label
+                      htmlFor="full_name"
+                      className="block mb-2 text-gray-700 font-medium dark:text-white"
+                    >
+                      Full name
                     </label>
                     <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
                       type="text"
-                      name="phone"
+                      name="full_name"
+                      id="full_name"
+                      autoComplete="name"
+                      className="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm dark:placeholder-gray-300 dark:text-gray-100 dark:border-gray-500 dark:bg-gray-900 focus:ring-cyan-400 focus:border-cyan-400"
+                      placeholder="Hamza"
+                      required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Email</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    type="email"
-                    name="email"
-                  />
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Subject</label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    type="text"
-                    name="subject"
-                  />
-                </div>
-                <div className="flex flex-col py-2">
-                  <label className="uppercase text-sm py-2">Message</label>
-                  <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300"
-                    rows={10}
-                    name="message"
-                  >
-                    hello
-                  </textarea>
-                </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
-                  Send Message
-                </button>
-              </form>
+                  <div className="w-full space-y-6 md:flex md:flex-grow md:space-y-0 md:space-x-6">
+                    <div className="w-full">
+                      <label
+                        htmlFor="email"
+                        className="block mb-2 text-gray-700 font-medium"
+                      >
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        className="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm  focus:ring-cyan-400 focus:border-cyan-400"
+                        placeholder="hamza@yahoo.com"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <label
+                        htmlFor="phone"
+                        className="block mb-2 text-gray-700 font-medium"
+                      >
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        autoComplete="tel"
+                        className="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm focus:ring-cyan-400 focus:border-cyan-400"
+                        placeholder="Optional"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block mb-2 text-gray-700 font-medium"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className="block w-full px-4 py-3 placeholder-gray-500 border-gray-300 rounded-md shadow-sm dark:placeholder-gray-300 dark:text-gray-100 dark:border-gray-500 dark:bg-gray-900 focus:ring-cyan-400 focus:border-cyan-400"
+                      placeholder="What would you like to say?"
+                      required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="inline-flex items-center px-6 py-3 shadow-sm text-base font-medium rounded-md text-white bg-gradient-to-r from-green-400 to-blue-500 filter hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                    >
+                      Send message
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-center py-12">
-          <Link href="/">
-            <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-              <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
-            </div>
-          </Link>
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 
