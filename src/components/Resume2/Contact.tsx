@@ -2,7 +2,7 @@
 import { FormEvent, useState } from "react";
 import Image from "next/image";
 
-export const Contact = () => {
+const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -27,10 +27,7 @@ export const Contact = () => {
 
   return (
     <>
-      <section
-        id="contact"
-        className="relative bg-gray-100 lg:mt-16 dark:bg-gray-900"
-      >
+      <section id="contact" className="relative lg:mt-16  dark:bg-gray-900">
         <div className="lg:relative">
           <div className="w-full h-full py-4 bg-gray-900 lg:hidden">
             <Image

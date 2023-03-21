@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        signature: ["Great Vibes, cursive"],
+        Poppins: ["Poppins, sans-serif"],
       },
 
     },

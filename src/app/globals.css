@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
 html {
-  scroll-behavior: smooth;
-  font-family: "Raleway", sans-serif;
+  @apply font-Poppins scroll-smooth;
 }
 
-@layer base {
-  body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold;
-  }
-
-  h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl;
-  }
-
-  h1 {
-    @apply text-3xl sm:text-4xl;
-  }
-
-  li {
-    @apply cursor-pointer;
-  }
-
-  button {
-    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
-  }
+body {
+  @apply box-border bg-gray-900 text-gray-100;
 }
+
+.btn-primary {
+  @apply bg-cyan-600 font-semibold text-white md:mx-0 mx-auto rounded-full py-3 px-6 flex items-center gap-2;
+}
+
+.aboutImg::after {
+  @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-gray-600 -z-10;
+}
+
+input,
+textarea {
+  @apply bg-gray-700 outline-indigo-600 rounded-lg p-3;
+}
+
+::placeholder {
+  @apply text-lg;
+}
+
+::selection {
+  @apply bg-cyan-600;
+}
+
+/* body { */
+/* @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide; */
+/* } */
+
+/* h1, */
+/* h2, */
+/* h3, */
+/* h4, */
+/* h5, */
+/* h6 { */
+/* @apply font-bold; */
+/* } */
+
+/* h1 { */
+/* @apply text-4xl sm:text-5xl md:text-6xl; */
+/* } */
+
+/* h1 { */
+/* @apply text-3xl sm:text-4xl; */
+/* } */
+
+/* li { */
+/* @apply cursor-pointer; */
+/* } */
+
+/* button { */
+/* @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white; */
+/* } */
+
+/* /* <Main /> */
+/* <About /> */
+/* <Experience /> */
+/* <Projects /> */
+/* <Contact /> */
+/* <Footer /> */
 

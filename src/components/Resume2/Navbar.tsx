@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/">
-          <h1 className="text-3xl ml-6 text-[#1f2937] lg:text-4xl font-signature font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer">
+          <h1 className="text-3xl ml-6 text-[#5651e5] lg:text-4xl font-signature font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer">
             hamza
           </h1>
         </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
           <div>
             <div className="flex w-full items-center justify-between">
               <Link href="/">
-                <h1 className="text-3xl font-signature font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer">
+                <h1 className="text-3xl font-signature text-[#5651e5] font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer">
                   hamza
                 </h1>
               </Link>
