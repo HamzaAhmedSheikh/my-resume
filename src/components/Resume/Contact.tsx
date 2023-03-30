@@ -1,13 +1,6 @@
 import React from "react";
 import { MdEmail, MdWhatsapp } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
-import { IconBase } from "react-icons/lib";
-
-const contact_info = [
-  { logo: MdEmail, text: "hamza_dev@gmail.com" },
-  { logo: MdWhatsapp, text: "+92 2240608888" },
-  { logo: ImLocation2, text: "Karachi" },
-];
 
 const Contact = () => {
   return (

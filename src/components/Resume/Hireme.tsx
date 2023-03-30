@@ -26,7 +26,7 @@ const Hireme = () => {
         </div>
         <Image
           src={hireMe}
-          alt=""
+          alt="hireme logo"
           className="lg:h-[32rem] h-80 lg:absolute bottom-0 -right-3 object-cover"
         />
       </div>
